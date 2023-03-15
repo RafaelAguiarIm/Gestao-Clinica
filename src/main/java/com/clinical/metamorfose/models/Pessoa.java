@@ -27,6 +27,8 @@ public abstract class Pessoa implements Serializable {
     protected String cpf;
     @Column(unique = true)
     protected String email;
+
+    protected String senha;
     protected String telefone1;
     protected String telefone2;
     @ElementCollection(fetch = FetchType.EAGER)
@@ -37,6 +39,18 @@ public abstract class Pessoa implements Serializable {
 //    protected Endereco endereco;
     public Pessoa(){
         super();
+        addPerfil(Perfil.ADM);
+    }
+
+    public Pessoa(Integer id, String nome, LocalDate dataNascimento, String cpf, String email, String telefone1, String telefone2, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone1 = telefone1;
+        this.telefone2 = telefone2;
+        this.senha = senha;
         addPerfil(Perfil.ADM);
     }
 
