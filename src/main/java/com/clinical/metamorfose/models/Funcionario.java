@@ -12,9 +12,6 @@ import java.time.LocalDate;
 public class Funcionario extends Pessoa{
     private  static final long serialVersionUID = 1L;
 
-    private String nomeResponsavel;
-    private String parentesco;
-
     public Funcionario(Integer id, String nome, String cpf, String email, String telefone1, String telefone2, String senha) {
         this.id = id;
         this.nome = nome;

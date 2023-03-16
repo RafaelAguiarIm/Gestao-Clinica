@@ -11,12 +11,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-//@Data
+@Data
 @Entity
 //@Table
 //@Inheritance( strategy = InheritanceType.SINGLE_TABLE )
 //@DiscriminatorColumn( name="type" )
 public abstract class Pessoa implements Serializable {
+    private  static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;

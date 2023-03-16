@@ -31,7 +31,7 @@ O projeto conta com dois perfis application.properties, sendo o perfil de testes
 - `Gestão Financeira`: Controle Financeiro da empresa - Gestão de entradas e saida, Fluxo de caixa
 - `Controle de Estoque`: Gestão do estoque da empresa;
 - `Controle de rotina`: Gestão da rotina de atividades realizada pelos funcionários
-- 'Sistema de Login'
+- `Sistema de Login` : 
 
 <hr>
 
