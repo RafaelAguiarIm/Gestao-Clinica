@@ -6,6 +6,7 @@ import com.clinical.metamorfose.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,7 @@ public class FuncionarioService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Funcionário não encontrado! Id: "+ id));
     }
 
-
-
+    public List<Funcionario> findAll(){
+        return repository.findAll();
+    }
 }
