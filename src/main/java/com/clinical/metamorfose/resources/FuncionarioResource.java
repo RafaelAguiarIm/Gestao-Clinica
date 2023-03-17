@@ -1,5 +1,6 @@
 package com.clinical.metamorfose.resources;
 
+import com.clinical.metamorfose.DTOs.FuncionarioDTO;
 import com.clinical.metamorfose.models.Funcionario;
 import com.clinical.metamorfose.services.FuncionarioService;
 import jakarta.validation.Valid;
@@ -19,8 +20,8 @@ public class FuncionarioResource {
     private FuncionarioService service;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Funcionario> findById(@PathVariable Long id){
+    public ResponseEntity<FuncionarioDTO> findById(@PathVariable Long id){
         Funcionario funcionario = service.findeById(id);
-        return ResponseEntity.ok().body(funcionario);
+        return ResponseEntity.ok().body(new FuncionarioDTO(funcionario));
     }
 }

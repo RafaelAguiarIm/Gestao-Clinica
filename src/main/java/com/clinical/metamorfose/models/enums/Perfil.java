@@ -1,5 +1,8 @@
 package com.clinical.metamorfose.models.enums;
 
+import lombok.Data;
+
+
 public enum Perfil {
     ADM(0, "ROLE_ADM"), ESPECIALISTA(1,"ROLE_ESPECIALISTA"), RECEPCIONISTA(2, "ROLE_RECEPCIONISTA"), PACIENTE(3, "ROLE_´PACIENTE");
 
