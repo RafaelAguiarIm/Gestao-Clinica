@@ -24,7 +24,7 @@ public class FuncionarioResource {
     //localhost:8080/funcionarios/1
     @GetMapping(value = "/{id}")
     public ResponseEntity<FuncionarioDTO> findById(@PathVariable Long id){
-        Funcionario funcionario = service.findeById(id);
+        Funcionario funcionario = service.findById(id);
         return ResponseEntity.ok().body(new FuncionarioDTO(funcionario));
     }
 

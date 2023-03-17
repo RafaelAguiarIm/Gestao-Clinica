@@ -3,6 +3,7 @@ package com.clinical.metamorfose.models;
 import com.clinical.metamorfose.models.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public abstract class Pessoa implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataNascimento;
     @Column(unique = true)
+    @NotBlank
     protected String cpf;
     @Column(unique = true)
     protected String email;
