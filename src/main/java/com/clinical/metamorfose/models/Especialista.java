@@ -14,7 +14,7 @@ public class Especialista extends Pessoa{
     private String conselho;
     private  Double valor;
 
-    public Especialista(Integer id, String nome,  String cpf, String email, String telefone1, String telefone2, String senha, String escpecialidade, String conselho, Double valor) {
+    public Especialista(Long id, String nome,  String cpf, String email, String telefone1, String telefone2, String senha, String escpecialidade, String conselho, Double valor) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;

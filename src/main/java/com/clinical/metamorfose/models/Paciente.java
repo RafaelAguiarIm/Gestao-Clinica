@@ -12,7 +12,7 @@ public class Paciente extends Pessoa{
     private String nomeResponsavel;
     private String parentesco;
 
-    public Paciente(Integer id, String nome, String cpf, String email, String telefone1, String telefone2, String nomeResponsavel, String parentesco) {
+    public Paciente(Long id, String nome, String cpf, String email, String telefone1, String telefone2, String nomeResponsavel, String parentesco) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;

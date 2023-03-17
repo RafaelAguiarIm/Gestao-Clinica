@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class FuncionarioDTO implements Serializable {
     private  static final long serialVersionUID = 1L;
 
-    protected Integer id;
+    protected Long id;
     protected String nome;
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataNascimento;
@@ -40,11 +40,14 @@ public class FuncionarioDTO implements Serializable {
         this.perfis.add(perfil.getCodigo());
     }
 
+
+
 //    protected Endereco endereco;
 
 
     public FuncionarioDTO() {
         super();
+        addPerfil(Perfil.ADM);
     }
 
     public FuncionarioDTO(Funcionario funcionario) {

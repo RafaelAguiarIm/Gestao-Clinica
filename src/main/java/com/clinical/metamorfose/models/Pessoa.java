@@ -20,7 +20,7 @@ public abstract class Pessoa implements Serializable {
     private  static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    protected Long id;
     protected String nome;
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataNascimento;
@@ -43,7 +43,7 @@ public abstract class Pessoa implements Serializable {
         addPerfil(Perfil.ADM);
     }
 
-    public Pessoa(Integer id, String nome, LocalDate dataNascimento, String cpf, String email, String telefone1, String telefone2, String senha) {
+    public Pessoa(Long id, String nome, LocalDate dataNascimento, String cpf, String email, String telefone1, String telefone2, String senha) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;

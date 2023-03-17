@@ -1,5 +1,6 @@
 package com.clinical.metamorfose.services;
 
+import com.clinical.metamorfose.DTOs.FuncionarioDTO;
 import com.clinical.metamorfose.models.Funcionario;
 import com.clinical.metamorfose.repositories.FuncionarioRepository;
 import com.clinical.metamorfose.services.exceptions.ObjectNotFoundException;
@@ -23,4 +24,17 @@ public class FuncionarioService {
     public List<Funcionario> findAll(){
         return repository.findAll();
     }
+
+    public Funcionario create(FuncionarioDTO funcionarioDTO){
+        funcionarioDTO.setId(null);
+        Funcionario funcionario = new Funcionario(funcionarioDTO);
+        return repository.save(funcionario);
+    }
+
+
+//    public void update(FuncionarioDTO funcionarioDTO) {
+//        var funcionario = repository.getReferenceById(funcionarioDTO.getId());
+//        funcionario.atualizarInformacoes(dadosMedico);
+//
+//    }
 }
