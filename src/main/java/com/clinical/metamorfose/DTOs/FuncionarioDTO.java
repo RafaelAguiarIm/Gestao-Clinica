@@ -4,6 +4,7 @@ import com.clinical.metamorfose.models.Funcionario;
 import com.clinical.metamorfose.models.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.FieldError;
@@ -20,12 +21,17 @@ public class FuncionarioDTO implements Serializable {
     private  static final long serialVersionUID = 1L;
 
     protected Long id;
+    @NotBlank(message = "O campo NOME é obrigatório")
     protected String nome;
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataNascimento;
+    @NotBlank(message = "O campo NOME é obrigatório")
     protected String cpf;
+    @NotBlank(message = "O campo EMAIL é obrigatório")
     protected String email;
+    @NotBlank(message = "O campo SENHA é obrigatório")
     protected String senha;
+    @NotBlank(message = "O campo TELEFONE 01 é obrigatório")
     protected String telefone1;
     protected String telefone2;
 
