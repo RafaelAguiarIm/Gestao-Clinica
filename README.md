@@ -12,15 +12,14 @@ A clínica possui diversas rotinas, quevão desde a gestão dos pacientes, contr
 O projeto conta com dois perfis application.properties, sendo o perfil de testes e o perfil de desenvolvimento.
 
 >### Módulos do sistema.
-<hr>
-##### :hammer: Repositório público
+
+### :hammer: Repositório público
 
 - `CRUD Funcionários`: Controle total dos funcionários
 - `CRUD Especialistas`: Controle total dos especialistas
 - `CRUD pacientes`: Controle total dos funcionários
 - `Agendamentos (Simples)`: Controle de marcação e agendamento de consultas
-<hr>
-##### :hammer: Repositório Privado
+### :hammer: Repositório Privado
 
 - `CRUD Funcionários`: Controle total dos funcionários
 - `CRUD Especialistas`: Controle total dos especialistas

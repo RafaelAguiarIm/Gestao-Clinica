@@ -29,10 +29,10 @@ public class DBServices {
 
     public void instanciaDB(){
 
-        Funcionario f1 = new Funcionario(null, "Rafael","03533934365", "rafael.aguiar.im@gmail.com", "88998051931", null, "123");
+        Funcionario f1 = new Funcionario(null, "Rafael","55544433321", "rafael@gmail.com", "88998051931", null, "123");
         f1.addPerfil(Perfil.ADM);
 
-        Funcionario f2 = new Funcionario(null, "Adriana","05188221330", "adrianagiraopsi@gmail.com", "88997477299", null, "123");
+        Funcionario f2 = new Funcionario(null, "Adriana","99988877766", "adriana@gmail.com", "88997477299", null, "123");
         f2.addPerfil(Perfil.ADM);
 
         Funcionario f3 = new Funcionario(null, "Ravelly","00011122200", "ravelly@gmail.com", "88999289747", null, "123");
