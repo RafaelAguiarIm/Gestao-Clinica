@@ -2,6 +2,7 @@ package com.clinical.metamorfose.services;
 
 import com.clinical.metamorfose.models.Funcionario;
 import com.clinical.metamorfose.repositories.FuncionarioRepository;
+import com.clinical.metamorfose.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class FuncionarioService {
 
     public Funcionario findeById(Long id){
         Optional<Funcionario> obj = repository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Funcionário não encontrado! Id: "+ id));
     }
 
 
