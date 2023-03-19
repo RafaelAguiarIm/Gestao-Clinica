@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class Funcionario extends Pessoa{
     private  static final long serialVersionUID = 1L;
 
-    public Funcionario(Long id, String nome, String cpf, String email, String telefone1, String telefone2, String senha) {
+    public Funcionario(Long id, String nome, String cpf, String email, String telefone1, String telefone2, String senha, Boolean disabled) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -22,6 +22,7 @@ public class Funcionario extends Pessoa{
         this.telefone1 = telefone1;
         this.telefone2 = telefone2;
         this.senha = senha;
+        this.disabled = disabled;
 //        addPerfil(Perfil.ADM);
     }
 
@@ -40,6 +41,7 @@ public class Funcionario extends Pessoa{
         this.telefone2 = funcionarioDTO.getTelefone2();
         this.perfis = funcionarioDTO.getPerfis().stream().map(perfil -> perfil.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao = funcionarioDTO.getDataCriacao();
+        this.disabled = funcionarioDTO.getDisabled();
     }
 
 

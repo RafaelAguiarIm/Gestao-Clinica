@@ -35,6 +35,8 @@ public class FuncionarioDTO implements Serializable {
     protected String telefone1;
     protected String telefone2;
 
+    protected Boolean disabled;
+
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
@@ -68,5 +70,6 @@ public class FuncionarioDTO implements Serializable {
         this.telefone2 = funcionario.getTelefone2();
         this.perfis = funcionario.getPerfil().stream().map(perfil -> perfil.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao = funcionario.getDataCriacao();
+        this.disabled = funcionario.getDisabled();
     }
 }

@@ -59,4 +59,52 @@ public class FuncionarioResource {
 
         return ResponseEntity.ok().body(new FuncionarioDTO(funcionario));
     }
+
+    //Método para inativa - Neste modelo apenas inativa o medico
+    @DeleteMapping("/{id}")
+//    @Transactional
+    //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
+    public ResponseEntity inativa(@PathVariable Long id){
+        service.getReferenceById(id);
+              //Cod 204 No Content
+        return ResponseEntity.noContent().build();
+    }
+
+    //Método para delete
+
+//    @DeleteMapping("/{id}")
+//    @Transactional
+//    //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
+//    public void delete(@PathVariable Long id){
+//        repository.deleteById(id);
+//    }
+
+    // Variacoes para o metodo FIND
+
+    /*
+
+     //Método com Paginação - Substitui o o List por Page e acrescenta os paramentros no listAll(Pageable paginacao) e no método findAll(paginacao)
+     @GetMapping("/true") //Anotation Get
+     public ResponseEntity<Page<ListMedicoDTO>> listByStatusTrue(@PageableDefault(size=10, sort = {"nome"}) Pageable paginacao){ //Método para listar todos os médicos
+     var page =  repository.findAllByStatusTrue(paginacao).map(ListMedicoDTO::new);
+     //Cod 200 ok
+     return ResponseEntity.ok(page);
+     }
+
+     //Método com Paginação - Substitui o o List por Page e acrescenta os paramentros no listAll(Pageable paginacao) e no método findAll(paginacao)
+     @GetMapping("/false") //Anotation Get
+     public ResponseEntity<Page<ListMedicoDTO>> listByStatusFalse(@PageableDefault(size=5, sort = {"nome"}) Pageable paginacao){ //Método para listar todos os médicos
+     var page =  repository.findAllByStatusFalse(paginacao).map(ListMedicoDTO::new);
+     //Cod 200 ok
+     return ResponseEntity.ok(page);
+     }
+
+     @GetMapping("/listAll") //Anotation Get
+     public ResponseEntity<Page<ListMedicoDTO>> findAll(@PageableDefault(size=10, sort = {"nome"}) Pageable paginacao){ //Método para listar todos os médicos
+     var page =  repository.findAll(paginacao).map(ListMedicoDTO::new);
+     //Cod 200 ok
+     return ResponseEntity.ok(page);
+     }
+
+     */
 }

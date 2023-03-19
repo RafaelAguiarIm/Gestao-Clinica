@@ -29,7 +29,7 @@ public abstract class Pessoa implements Serializable {
     protected LocalDate dataNascimento;
     @Column(unique = true)
     @NotBlank
-    @CPF //Verifica se é um cpf válido
+//    @CPF //Verifica se é um cpf válido
     protected String cpf;
 //    @Email
     @Column(unique = true)
@@ -43,13 +43,19 @@ public abstract class Pessoa implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
+    protected Boolean disabled = false;
+
+    public void desabilitar() {
+        this.disabled = true;
+    }
+
 //    protected Endereco endereco;
     public Pessoa(){
         super();
         addPerfil(Perfil.ADM);
     }
 
-    public Pessoa(Long id, String nome, LocalDate dataNascimento, String cpf, String email, String telefone1, String telefone2, String senha) {
+    public Pessoa(Long id, String nome, LocalDate dataNascimento, String cpf, String email, String telefone1, String telefone2, String senha, Boolean disabled) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -58,6 +64,7 @@ public abstract class Pessoa implements Serializable {
         this.telefone1 = telefone1;
         this.telefone2 = telefone2;
         this.senha = senha;
+        this.disabled = disabled;
         addPerfil(Perfil.ADM);
     }
 
