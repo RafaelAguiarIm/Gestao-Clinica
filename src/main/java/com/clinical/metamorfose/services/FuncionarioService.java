@@ -60,11 +60,13 @@ public class FuncionarioService {
 
     public Funcionario getReferenceById(Long id) {
         var funcionario = findById(id);
-
         funcionario.setDisabled(true);
-
         return funcionarioRepository.save(funcionario);
+    }
 
+    public void deleteById(Long id) {
+        var funcionario = findById(id);
+        funcionarioRepository.delete(funcionario);
     }
 
 

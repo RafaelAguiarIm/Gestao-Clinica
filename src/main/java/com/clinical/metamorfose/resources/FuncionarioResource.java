@@ -61,7 +61,7 @@ public class FuncionarioResource {
     }
 
     //Método para inativa - Neste modelo apenas inativa o medico
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/disabled/{id}")
 //    @Transactional
     //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
     public ResponseEntity inativa(@PathVariable Long id){
@@ -72,12 +72,12 @@ public class FuncionarioResource {
 
     //Método para delete
 
-//    @DeleteMapping("/{id}")
-//    @Transactional
-//    //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
-//    public void delete(@PathVariable Long id){
-//        repository.deleteById(id);
-//    }
+    @DeleteMapping("/delete/{id}")
+    @Transactional
+    //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
+    public void delete(@PathVariable Long id){
+        service.deleteById(id);
+    }
 
     // Variacoes para o metodo FIND
 
