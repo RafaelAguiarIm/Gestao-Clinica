@@ -51,12 +51,12 @@ public class FuncionarioResource {
         return ResponseEntity.created(uri).body(new FuncionarioDTO(funcionario));
     }
 
-//    @PutMapping
-//    @Transactional
-//    public ResponseEntity update(@RequestBody @Valid FuncionarioDTO funcionarioDTO){
-//        var funcionario = new Funcionario(funcionarioDTO);
-//        service.update(funcionarioDTO);
-//
-//        return ResponseEntity.ok(new FuncionarioDTO(funcionario));
-//    }
+    @PutMapping(value = "/{id}")
+    @Transactional
+    public ResponseEntity update(@PathVariable Long id, @RequestBody @Valid FuncionarioDTO funcionarioDTO){
+        var funcionario = new Funcionario(funcionarioDTO);
+        service.update(id, funcionarioDTO);
+
+        return ResponseEntity.ok().body(new FuncionarioDTO(funcionario));
+    }
 }

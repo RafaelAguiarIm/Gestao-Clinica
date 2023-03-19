@@ -48,6 +48,16 @@ public class FuncionarioService {
         }
     }
 
+    public Funcionario update(Long id, FuncionarioDTO funcionarioDTO) {
+        funcionarioDTO.setId(id);
+        var funcionario = findById(id);
+        validaCpfAndEmail(funcionarioDTO);
+        funcionario = new Funcionario(funcionarioDTO);
+        return  funcionarioRepository.save(funcionario);
+
+
+    }
+
 
 //    public void update(FuncionarioDTO funcionarioDTO) {
 //        var funcionario = repository.getReferenceById(funcionarioDTO.getId());
